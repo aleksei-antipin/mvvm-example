@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using Test.MVVM;
 using UnityEngine;
 
-namespace Test.States
+namespace Test.Application
 {
     public class StateMonitoringWidgetFacade : WidgetGroupFacade
     {

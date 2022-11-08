@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace Test.View
+namespace Test.Meta
 {
     public class ProductListWidgetFacade : MVVM.WidgetGroupFacade
     {

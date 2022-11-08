@@ -1,7 +1,7 @@
-using Test.Infrastructure;
+using Test.Application;
 using Test.MVVM;
 
-namespace Test.States
+namespace Test.Application
 {
     public class StateMonitorViewBehaviour : ViewBehaviour<StateMonitoringWidgetFacade, IStateMonitorViewModel>
     {

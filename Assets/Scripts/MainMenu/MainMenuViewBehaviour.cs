@@ -1,8 +1,8 @@
 using Test.MVVM;
-using Test.View;
+using Test.Meta;
 using UnityEngine;
 
-namespace Test
+namespace Test.Application
 {
     public class MainMenuViewBehaviour : ViewBehaviour<MainMenuWidgetFacade, IMainMenuViewModel>
     {

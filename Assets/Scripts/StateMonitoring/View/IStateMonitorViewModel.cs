@@ -1,8 +1,8 @@
 using DM.NotifierTypes;
-using Test.Infrastructure;
+using Test.Application;
 using Test.MVVM;
 
-namespace Test.States
+namespace Test.Application
 {
     public interface IStateMonitorViewModel : IViewModel
     {

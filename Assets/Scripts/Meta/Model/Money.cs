@@ -8,6 +8,12 @@ namespace Test.Meta
         private readonly Dictionary<Currency, double> _values = new();
         public IReadOnlyDictionary<Currency, double> Values => _values;
 
+
+        public override string ToString()
+        {
+            return _values.Aggregate("", (a, b) => a + " " + $"{b.Value} {b.Key.Name}");
+        }
+
         private Money Clone()
         {
             var money = new Money(_values.ToDictionary(x => x.Key, y => y.Value));
@@ -62,7 +68,7 @@ namespace Test.Meta
 
         public static bool operator ==(Money a, Money b)
         {
-            if (a == null || b == null)
+            if (ReferenceEquals(a, null) || ReferenceEquals(b, null))
                 return false;
 
             if (a._values.Count != b._values.Count)
@@ -87,6 +93,11 @@ namespace Test.Meta
         #endregion
 
         #region Ctors
+
+        public Money()
+        {
+            _values = new Dictionary<Currency, double>();
+        }
 
         public Money(double amount, Currency currency)
         {

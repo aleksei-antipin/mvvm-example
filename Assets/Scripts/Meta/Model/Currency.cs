@@ -16,7 +16,7 @@ namespace Test.Meta
 
         public override string ToString()
         {
-            return $"Currency. Name: {Id}, Id: {Name}";
+            return $"Currency. Name: {Name}, Id: {Id}";
         }
 
         public override bool Equals(object obj)

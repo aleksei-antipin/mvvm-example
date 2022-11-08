@@ -1,7 +1,7 @@
 using DM.NotifierTypes;
-using Test.Infrastructure;
+using Test.Application;
 
-namespace Test.States
+namespace Test.Application
 {
     public class StateMonitorViewModel : IStateMonitorViewModel
     {

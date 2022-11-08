@@ -7,7 +7,7 @@ namespace Test.Meta
 {
     public interface IMarketViewModel : IViewModel
     {
-        IReadOnlyCollection<Product> Products { get; }
+        IReadOnlyCollection<ProductViewModel> Products { get; }
         void Back();
     }
 }

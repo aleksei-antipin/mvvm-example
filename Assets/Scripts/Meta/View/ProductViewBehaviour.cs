@@ -1,8 +1,6 @@
-using System.Collections;
-using System.Collections.Generic;
+using System;
 using Test.MVVM;
-using Test.View;
-using UnityEngine;
+using Test.Meta;
 
 namespace Test.Meta
 {
@@ -12,10 +10,19 @@ namespace Test.Meta
         {
         }
 
+        public event Action<IViewModel> OnProductClick;
+
         protected override void OnInitialized()
         {
-            // WidgetGroupFacade.N
+            WidgetGroupFacade.NameText.text = ViewModel.Name;
+            WidgetGroupFacade.PriceText.text = ViewModel.Price.ToString();
+            WidgetGroupFacade.Button.onClick.AddListener(HandleProductClick);
+        }
 
+        private void HandleProductClick()
+        {
+            ViewModel.HandleProductClick();
+            OnProductClick?.Invoke(ViewModel);
         }
     }
 }

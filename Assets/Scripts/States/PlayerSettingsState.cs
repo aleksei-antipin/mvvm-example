@@ -1,7 +1,7 @@
 using Test.Meta;
 using UnityEngine;
 
-namespace Test.Infrastructure
+namespace Test.Application
 {
     public class PlayerSettingsState : State
     {

@@ -3,7 +3,7 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
-namespace Test.View
+namespace Test.Meta
 {
     public class ProductWidgetFacade : WidgetGroupFacade
     {
@@ -11,7 +11,10 @@ namespace Test.View
 
         [SerializeField] private TextMeshProUGUI _priceText;
 
+        [SerializeField] private Button _button;
+
         public TextMeshProUGUI NameText => _nameText;
         public TextMeshProUGUI PriceText => _priceText;
+        public Button Button => _button;
     }
 }

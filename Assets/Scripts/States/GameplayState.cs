@@ -1,9 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
-using Test.Infrastructure;
+using Test.Application;
 using UnityEngine;
 
-namespace Test.States
+namespace Test.Application
 {
     public class GameplayState : State
     {

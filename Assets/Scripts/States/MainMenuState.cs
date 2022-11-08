@@ -1,6 +1,8 @@
-using Test.Infrastructure;
+using System;
+using Test.Application;
+using Test.Meta;
 
-namespace Test.States
+namespace Test.Application
 {
     public class MainMenuState : State
     {
@@ -11,9 +13,9 @@ namespace Test.States
         protected override void OnStateEnter()
         {
             var router = ServiceLocator.Instance.Resolve<Router>();
-            var context = new ViewModelGenerationContext
+            var context = new ViewModelContext
             {
-                viewModelArgs = new object[] { router }
+                viewModelCtorArgs = new object[] { router }
             };
 
             (_mainMenuViewBehaviour, _mainMenuViewModel) =
@@ -23,8 +25,6 @@ namespace Test.States
         protected override void OnStateExit()
         {
             UISystem.Release(_mainMenuViewBehaviour);
-            _mainMenuViewBehaviour = null;
-            _mainMenuViewModel = null;
         }
     }
 }

@@ -1,26 +1,32 @@
 using System.Collections.Generic;
-using Test.Infrastructure;
-using Test.States;
+using System.Linq;
+using Test.Application;
 
 namespace Test.Meta
 {
     public class MarketViewModel : IMarketViewModel
     {
-        private readonly Router _router;
-
         private readonly Market _market;
+        private readonly Router _router;
+        private readonly PurchasingService _purchasingService;
 
         #region Ctor
 
-        public MarketViewModel(Router router, Market market)
+        public MarketViewModel(Router router, Market market, PurchasingService purchasingService)
         {
             _router = router;
             _market = market;
+            _purchasingService = purchasingService;
+            
+            //wtf
+            Products = _market.Products
+                .Select(p => new ProductViewModel(p, _purchasingService))
+                .ToList();
         }
 
         #endregion
 
-        public IReadOnlyCollection<Product> Products => _market.Products;
+        public IReadOnlyCollection<ProductViewModel> Products { get; }
 
         public void Back()
         {

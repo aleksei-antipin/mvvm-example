@@ -1,6 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
-using Test.Infrastructure;
+using Test.Application;
 using UnityEngine;
 using UnityEngine.UI;
 
